@@ -102,7 +102,7 @@ module EnumerateBy
       
       # The cache store to use for queries (default is a memory store)
       cattr_accessor :enumerator_cache_store
-      self.enumerator_cache_store = ActiveSupport::Cache::MemoryStore.new
+      self.enumerator_cache_store = Rails.cache
       
       validates_presence_of attribute
       validates_uniqueness_of attribute
@@ -199,7 +199,7 @@ module EnumerateBy
     ensure
       self.perform_enumerator_caching = old
     end
-    
+
     private
       # Typecasts the given enumerator to its actual value stored in the
       # database.  This will only convert symbols to strings.  All other values
@@ -226,6 +226,11 @@ module EnumerateBy
   end
   
   module Bootstrapped
+
+    def enumeration_cache_key(records)
+      "enumerate_by_#{table_name}_#{records.hash}"
+    end
+
     # Synchronizes the given records with existing ones.  This ensures that
     # only the correct and most up-to-date records exist in the database.
     # The sync process is as follows:
@@ -278,39 +283,41 @@ module EnumerateBy
     # only be synchronized if the attribute is nil in the database.
     # Otherwise, any changes to that column remain there.
     def bootstrap(*records)
-      uncached do
-        primary_key = self.primary_key.to_sym
-        
-        # Remove records that are no longer being used
-        records.flatten!
-        ids = records.map {|record| record[primary_key]}.compact
-        delete_all(ids.any? ? ["#{primary_key} NOT IN (?)", ids] : nil)
-        
-        # Find remaining existing records (to be updated)
-        existing = all.inject({}) {|existing, record| existing[record.send(primary_key)] = record; existing}
-        
-        records.map! do |attributes|
-          attributes.symbolize_keys!
-          defaults = attributes.delete(:defaults)
-          
-          # Update with new attributes
-          record =
-            if record = existing[attributes[primary_key]]
-              attributes.merge!(defaults.delete_if {|attribute, value| record.send("#{attribute}?")}) if defaults
-              record.attributes = attributes
-              record
-            else
-              attributes.merge!(defaults) if defaults
-              new(attributes)
-            end
-          record.send("#{primary_key}=", attributes[primary_key])
-          
-          # Force failed saves to stop execution
-          record.save!
-          record
+      enumerator_cache_store.fetch(enumeration_cache_key(records)) do
+        uncached do
+          primary_key = self.primary_key.to_sym
+
+          # Remove records that are no longer being used
+          records.flatten!
+          ids = records.map {|record| record[primary_key]}.compact
+          delete_all(ids.any? ? ["#{primary_key} NOT IN (?)", ids] : nil)
+
+          # Find remaining existing records (to be updated)
+          existing = all.inject({}) {|existing, record| existing[record.send(primary_key)] = record; existing}
+
+          records.map! do |attributes|
+            attributes.symbolize_keys!
+            defaults = attributes.delete(:defaults)
+
+            # Update with new attributes
+            record =
+              if record = existing[attributes[primary_key]]
+                attributes.merge!(defaults.delete_if {|attribute, value| record.send("#{attribute}?")}) if defaults
+                record.attributes = attributes
+                record
+              else
+                attributes.merge!(defaults) if defaults
+                new(attributes)
+              end
+            record.send("#{primary_key}=", attributes[primary_key])
+
+            # Force failed saves to stop execution
+            record.save!
+            record
+          end
+
+          records
         end
-        
-        records
       end
     end
     
