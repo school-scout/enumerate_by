@@ -102,8 +102,8 @@ module EnumerateBy
       
       # The cache store to use for queries (default is a memory store)
       cattr_accessor :enumerator_cache_store
-      self.enumerator_cache_store = Rails.cache
-      
+      self.enumerator_cache_store = Rails.env.test? ? ActiveSupport::Cache::MemoryStore.new : Rails.cache
+
       validates_presence_of attribute
       validates_uniqueness_of attribute
     end
