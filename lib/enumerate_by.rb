@@ -181,7 +181,8 @@ module EnumerateBy
     # unnecessary lookups in the database.
     [:find_by_sql, :exists?, :calculate].each do |method|
       define_method(method) do |*args|
-        if EnumerateBy.perform_caching && perform_enumerator_caching
+        if EnumerateBy.perform_caching && perform_enumerator_caching &&
+            !(method == :find_by_sql && args.first.include?('JOIN'))    # Workaround: No caching for associations!
           shallow_clone(enumerator_cache_store.fetch([method] + args) { super(*args) })
         else
           super(*args)
