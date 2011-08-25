@@ -229,7 +229,7 @@ module EnumerateBy
   module Bootstrapped
 
     def enumeration_cache_key(records)
-      "enumerate_by_#{table_name}_#{records.hash}"
+      "enumerate_by_#{table_name}_#{Digest::MD5.hexdigest records.to_s}"
     end
 
     # Synchronizes the given records with existing ones.  This ensures that
