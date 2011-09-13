@@ -1,0 +1,1492 @@
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (22.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateColors (1)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "colors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "html" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('1')
+Migrating to CreateCars (2)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "cars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "color_id" integer, "legacy_color_id" integer, "feature_id" integer, "feature_type" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('2')
+Migrating to CreateCarParts (3)
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "car_parts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "number" integer) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('3')
+Migrating to CreateOrders (4)
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state" varchar(255), "car_part_id" integer) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('4')
+Migrating to CreateLegacyColors (5)
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "legacy_colors" ("uid" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "html" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('5')
+Migrating to CreateTags (6)
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('6')
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateColors (1)
+Migrating to CreateCars (2)
+Migrating to CreateCarParts (3)
+Migrating to CreateOrders (4)
+Migrating to CreateLegacyColors (5)
+Migrating to CreateTags (6)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateColors (1)
+Migrating to CreateCars (2)
+Migrating to CreateCarParts (3)
+Migrating to CreateOrders (4)
+Migrating to CreateLegacyColors (5)
+Migrating to CreateTags (6)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateColors (1)
+Migrating to CreateCars (2)
+Migrating to CreateCarParts (3)
+Migrating to CreateOrders (4)
+Migrating to CreateLegacyColors (5)
+Migrating to CreateTags (6)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateColors (1)
+Migrating to CreateCars (2)
+Migrating to CreateCarParts (3)
+Migrating to CreateOrders (4)
+Migrating to CreateLegacyColors (5)
+Migrating to CreateTags (6)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateColors (1)
+Migrating to CreateCars (2)
+Migrating to CreateCarParts (3)
+Migrating to CreateOrders (4)
+Migrating to CreateLegacyColors (5)
+Migrating to CreateTags (6)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateColors (1)
+Migrating to CreateCars (2)
+Migrating to CreateCarParts (3)
+Migrating to CreateOrders (4)
+Migrating to CreateLegacyColors (5)
+Migrating to CreateTags (6)
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM "colors" WHERE (id NOT IN (1,2))
+  [1m[36mColor Load (0.0ms)[0m  [1mSELECT "colors".* FROM "colors"[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html", "id") VALUES ('red', NULL, 1)[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html", "id") VALUES ('green', NULL, 2)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "colors" WHERE (id NOT IN (1,2))
+  [1m[36mColor Load (0.0ms)[0m  [1mSELECT "colors".* FROM "colors"[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html", "id") VALUES ('red', NULL, 1)[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html", "id") VALUES ('green', NULL, 2)[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "colors" WHERE (id NOT IN (1,2))
+  [1m[36mColor Load (0.2ms)[0m  [1mSELECT "colors".* FROM "colors"[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') AND ("colors".id <> 1) LIMIT 1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') AND ("colors".id <> 2) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "colors"
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors"
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html", "id") VALUES ('red', NULL, 1)
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html", "id") VALUES ('green', NULL, 2)
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM "colors" WHERE 1=1[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors"
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html", "id") VALUES ('red', NULL, NULL)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html", "id") VALUES ('green', NULL, NULL)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "colors"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "colors" WHERE (id NOT IN (1,2))
+  [1m[36mColor Load (0.0ms)[0m  [1mSELECT "colors".* FROM "colors"[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html", "id") VALUES ('red', NULL, 1)[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html", "id") VALUES ('green', NULL, 2)[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "colors" WHERE (id NOT IN (1,2))
+  [1m[36mColor Load (0.2ms)[0m  [1mSELECT "colors".* FROM "colors"[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" IS NULL) AND ("colors".id <> 1) LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT * FROM "colors"
+  [1m[36mColor Create (0.1ms)[0m  [1mINSERT INTO "colors" ("id", "name") VALUES(1, 'red')[0m
+  [1m[35mColor Create (0.0ms)[0m  INSERT INTO "colors" ("id", "name") VALUES(2, 'green')
+  [1m[36mColor Load (0.2ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" = 'green' LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT * FROM "colors"
+  [1m[36mColor Create (0.1ms)[0m  [1mINSERT INTO "colors" ("id", "name") VALUES(1, 'red')[0m
+  [1m[35mColor Create (0.0ms)[0m  INSERT INTO "colors" ("id", "name") VALUES(2, 'green')
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mColor Load (0.2ms)[0m  SELECT "colors".* FROM "colors"
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') AND ("colors".id <> 1) LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') AND ("colors".id <> 2) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "colors"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "colors" WHERE (id NOT IN (1,2))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT * FROM "colors"[0m
+  [1m[35mColor Create (0.1ms)[0m  INSERT INTO "colors" ("id", "name") VALUES(1, 'red')
+  [1m[36mColor Create (0.0ms)[0m  [1mINSERT INTO "colors" ("id", "name") VALUES(2, 'green')[0m
+  [1m[35mAREL (0.0ms)[0m  DELETE FROM "colors" WHERE 1=1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT * FROM "colors"[0m
+  [1m[35mColor Create (0.0ms)[0m  INSERT INTO "colors" ("name") VALUES('red')
+  [1m[36mColor Create (0.0ms)[0m  [1mINSERT INTO "colors" ("name") VALUES('green')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "colors"
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT * FROM "colors"
+  [1m[36mColor Create (0.1ms)[0m  [1mINSERT INTO "colors" ("id", "name") VALUES(1, 'red')[0m
+  [1m[35mColor Create (0.0ms)[0m  INSERT INTO "colors" ("id", "name") VALUES(2, 'green')
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT * FROM "colors"
+  [1m[36mAREL (0.1ms)[0m  [1mUPDATE "colors" SET "name" = NULL WHERE "colors"."id" = 1[0m
+SQLite3::ConstraintException: colors.name may not be NULL: UPDATE "colors" SET "name" = NULL WHERE "colors"."id" = 1
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "legacy_colors" WHERE (uid NOT IN (1,2))
+  [1m[36mLegacyColor Load (0.0ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors"[0m
+WARNING: Can't mass-assign protected attributes: uid
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "legacy_colors" ("name", "html", "uid") VALUES ('red', NULL, 1)[0m
+WARNING: Can't mass-assign protected attributes: uid
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "legacy_colors" ("name", "html", "uid") VALUES ('green', NULL, 2)[0m
+  [1m[35mLegacyColor Load (0.1ms)[0m  SELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 1 LIMIT 1
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "legacy_colors" WHERE (uid NOT IN (1,2))
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors"[0m
+WARNING: Can't mass-assign protected attributes: uid
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "legacy_colors" ("name", "html", "uid") VALUES ('red', NULL, 1)[0m
+WARNING: Can't mass-assign protected attributes: uid
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "legacy_colors" ("name", "html", "uid") VALUES ('green', NULL, 2)[0m
+  [1m[35mAREL (0.0ms)[0m  DELETE FROM "legacy_colors" WHERE 1=1
+  [1m[36mLegacyColor Load (0.0ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors"[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "legacy_colors" ("name", "html", "uid") VALUES ('red', NULL, NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "legacy_colors" ("name", "html", "uid") VALUES ('green', NULL, NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "legacy_colors"
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "legacy_colors" WHERE (uid NOT IN (1,2))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT * FROM "legacy_colors"
+  [1m[36mLegacyColor Create (0.1ms)[0m  [1mINSERT INTO "legacy_colors" ("uid", "name") VALUES(1, 'red')[0m
+  [1m[35mLegacyColor Create (0.0ms)[0m  INSERT INTO "legacy_colors" ("uid", "name") VALUES(2, 'green')
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."name" = 'red' LIMIT 1[0m
+  [1m[35mLegacyColor Load (0.1ms)[0m  SELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."name" = 'green' LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "legacy_colors" WHERE (uid NOT IN (1,2))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT * FROM "legacy_colors"
+  [1m[36mLegacyColor Create (0.1ms)[0m  [1mINSERT INTO "legacy_colors" ("uid", "name") VALUES(1, 'red')[0m
+  [1m[35mLegacyColor Create (0.0ms)[0m  INSERT INTO "legacy_colors" ("uid", "name") VALUES(2, 'green')
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM "legacy_colors" WHERE 1=1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT * FROM "legacy_colors"
+  [1m[36mLegacyColor Create (0.0ms)[0m  [1mINSERT INTO "legacy_colors" ("name") VALUES('red')[0m
+  [1m[35mLegacyColor Create (0.0ms)[0m  INSERT INTO "legacy_colors" ("name") VALUES('green')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "legacy_colors"[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "cars" WHERE (id NOT IN (1,2))
+  [1m[36mCar Load (0.1ms)[0m  [1mSELECT "cars".* FROM "cars"[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type", "id") VALUES ('Ford Mustang', NULL, NULL, NULL, NULL, 1)
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type", "id") VALUES ('Ford Explorer', NULL, NULL, NULL, NULL, 2)[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "cars"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateColors (1)
+Migrating to CreateCars (2)
+Migrating to CreateCarParts (3)
+Migrating to CreateOrders (4)
+Migrating to CreateLegacyColors (5)
+Migrating to CreateTags (6)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateColors (1)
+Migrating to CreateCars (2)
+Migrating to CreateCarParts (3)
+Migrating to CreateOrders (4)
+Migrating to CreateLegacyColors (5)
+Migrating to CreateTags (6)
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'RED') LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('RED', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'GREEN') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('GREEN', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "colors" WHERE (id NOT IN (1,2))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT * FROM "colors"[0m
+  [1m[35mAREL (0.1ms)[0m  UPDATE "colors" SET "name" = 'red' WHERE "colors"."id" = 1
+  [1m[36mAREL (0.0ms)[0m  [1mUPDATE "colors" SET "name" = 'green' WHERE "colors"."id" = 2[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 3 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 3 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('green', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 3 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 3 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 3 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 3 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 3 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('green', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 3 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" = 'blue' LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'green' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 3 LIMIT 1
+  [1m[36mColor Load (0.0ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'invalid' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 3 LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors"
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html", "id") VALUES ('red', NULL, 1)
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html", "id") VALUES ('green', NULL, 2)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors"
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html", "id") VALUES ('red', NULL, 1)
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html", "id") VALUES ('green', NULL, 2)
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mColor Load (0.2ms)[0m  SELECT "colors".* FROM "colors"
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') AND ("colors".id <> 1) LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') AND ("colors".id <> 2) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "colors"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "colors" WHERE (id NOT IN (1,2))
+  [1m[36mColor Load (0.0ms)[0m  [1mSELECT "colors".* FROM "colors"[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html", "id") VALUES ('red', NULL, 1)[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html", "id") VALUES ('green', NULL, 2)[0m
+  [1m[35mAREL (0.0ms)[0m  DELETE FROM "colors" WHERE 1=1
+  [1m[36mColor Load (0.0ms)[0m  [1mSELECT "colors".* FROM "colors"[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html", "id") VALUES ('red', NULL, NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html", "id") VALUES ('green', NULL, NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "colors"
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors"
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html", "id") VALUES ('red', NULL, 1)
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html", "id") VALUES ('green', NULL, 2)
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mColor Load (0.2ms)[0m  SELECT "colors".* FROM "colors"
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" IS NULL) AND ("colors".id <> 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'RED') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('RED', '#f00')[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'GREEN') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('GREEN', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "colors" WHERE (id NOT IN (1,2))
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors"[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') AND ("colors".id <> 1) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mUPDATE "colors" SET "name" = 'red' WHERE "colors"."id" = 1[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') AND ("colors".id <> 2) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mUPDATE "colors" SET "name" = 'green', "html" = '#00ff00' WHERE "colors"."id" = 2[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'RED') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('RED', '#f00')[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'GREEN') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('GREEN', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "colors" WHERE (id NOT IN (1,2))
+  [1m[36mColor Load (0.2ms)[0m  [1mSELECT "colors".* FROM "colors"[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') AND ("colors".id <> 1) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mUPDATE "colors" SET "name" = 'red' WHERE "colors"."id" = 1[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') AND ("colors".id <> 2) LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mUPDATE "colors" SET "name" = 'green', "html" = '#00ff00' WHERE "colors"."id" = 2[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'RED') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('RED', '#f00')[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'GREEN') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('GREEN', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "colors" WHERE (id NOT IN (1,2))
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors"[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') AND ("colors".id <> 1) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mUPDATE "colors" SET "name" = 'red' WHERE "colors"."id" = 1[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') AND ("colors".id <> 2) LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mUPDATE "colors" SET "name" = 'green', "html" = '#00ff00' WHERE "colors"."id" = 2[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'RED') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('RED', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'GREEN') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('GREEN', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  DELETE FROM "colors" WHERE 1=1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors"[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html", "id") VALUES ('red', NULL, NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html", "id") VALUES ('green', NULL, NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "colors"
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'RED') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('RED', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'GREEN') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('GREEN', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mColor Load (0.2ms)[0m  SELECT "colors".* FROM "colors"
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') AND ("colors".id <> 1) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  UPDATE "colors" SET "name" = 'red' WHERE "colors"."id" = 1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') AND ("colors".id <> 2) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  UPDATE "colors" SET "name" = 'green' WHERE "colors"."id" = 2
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT * FROM "colors"
+  [1m[36mColor Create (0.1ms)[0m  [1mINSERT INTO "colors" ("id", "name") VALUES(1, 'red')[0m
+  [1m[35mColor Create (0.0ms)[0m  INSERT INTO "colors" ("id", "name") VALUES(2, 'green')
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" = 'green' LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT * FROM "colors"
+  [1m[36mColor Create (0.1ms)[0m  [1mINSERT INTO "colors" ("id", "name") VALUES(1, 'red')[0m
+  [1m[35mColor Create (0.0ms)[0m  INSERT INTO "colors" ("id", "name") VALUES(2, 'green')
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mColor Load (0.2ms)[0m  SELECT "colors".* FROM "colors"
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') AND ("colors".id <> 1) LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') AND ("colors".id <> 2) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "colors"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "colors" WHERE (id NOT IN (1,2))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT * FROM "colors"[0m
+  [1m[35mColor Create (0.1ms)[0m  INSERT INTO "colors" ("id", "name") VALUES(1, 'red')
+  [1m[36mColor Create (0.1ms)[0m  [1mINSERT INTO "colors" ("id", "name") VALUES(2, 'green')[0m
+  [1m[35mAREL (0.0ms)[0m  DELETE FROM "colors" WHERE 1=1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT * FROM "colors"[0m
+  [1m[35mColor Create (0.0ms)[0m  INSERT INTO "colors" ("name") VALUES('red')
+  [1m[36mColor Create (0.0ms)[0m  [1mINSERT INTO "colors" ("name") VALUES('green')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "colors"
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT * FROM "colors"
+  [1m[36mColor Create (0.1ms)[0m  [1mINSERT INTO "colors" ("id", "name") VALUES(1, 'red')[0m
+  [1m[35mColor Create (0.0ms)[0m  INSERT INTO "colors" ("id", "name") VALUES(2, 'green')
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "colors" WHERE (id NOT IN (1,2))[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT * FROM "colors"
+  [1m[36mAREL (0.2ms)[0m  [1mUPDATE "colors" SET "name" = NULL WHERE "colors"."id" = 1[0m
+SQLite3::ConstraintException: colors.name may not be NULL: UPDATE "colors" SET "name" = NULL WHERE "colors"."id" = 1
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'RED') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('RED', '#f00')[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'GREEN') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('GREEN', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "colors" WHERE (id NOT IN (1,2))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT * FROM "colors"[0m
+  [1m[35mAREL (0.0ms)[0m  UPDATE "colors" SET "name" = 'red' WHERE "colors"."id" = 1
+  [1m[36mAREL (0.0ms)[0m  [1mUPDATE "colors" SET "name" = 'green', "html" = '#00ff00' WHERE "colors"."id" = 2[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'RED') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('RED', '#f00')[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'GREEN') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('GREEN', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "colors" WHERE (id NOT IN (1,2))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT * FROM "colors"[0m
+  [1m[35mAREL (0.0ms)[0m  UPDATE "colors" SET "name" = 'red' WHERE "colors"."id" = 1
+  [1m[36mAREL (0.0ms)[0m  [1mUPDATE "colors" SET "name" = 'green', "html" = '#00ff00' WHERE "colors"."id" = 2[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'RED') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('RED', '#f00')[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'GREEN') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('GREEN', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "colors" WHERE (id NOT IN (1,2))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT * FROM "colors"[0m
+  [1m[35mAREL (0.0ms)[0m  UPDATE "colors" SET "name" = 'red' WHERE "colors"."id" = 1
+  [1m[36mAREL (0.1ms)[0m  [1mUPDATE "colors" SET "name" = 'green', "html" = '#00ff00' WHERE "colors"."id" = 2[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'RED') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('RED', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'GREEN') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('GREEN', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  DELETE FROM "colors" WHERE 1=1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT * FROM "colors"[0m
+  [1m[35mColor Create (0.0ms)[0m  INSERT INTO "colors" ("name") VALUES('red')
+  [1m[36mColor Create (0.0ms)[0m  [1mINSERT INTO "colors" ("name") VALUES('green')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "colors"
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE "colors"."name" = 'green' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.2ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE ("cars".color_id = 1)[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE ("cars".color_id = 1)[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 3 LIMIT 1[0m
+  [1m[35mCar Load (0.3ms)[0m  SELECT "cars".* FROM "cars" WHERE ("cars".color_id = 1)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MIN("colors"."id") AS min_id FROM "colors"
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO "legacy_colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mLegacyColor Load (0.1ms)[0m  SELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'blue') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "legacy_colors" ("name", "html") VALUES ('blue', NULL)
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, 1, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, 2, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1[0m
+  [1m[35mCar Load (0.1ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."legacy_color" = 'red' LIMIT 1
+SQLite3::SQLException: no such column: cars.legacy_color: SELECT  "cars".* FROM "cars" WHERE "cars"."legacy_color" = 'red' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "legacy_colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "legacy_colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mLegacyColor Load (0.1ms)[0m  SELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, 1, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, 2, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1
+  [1m[36mCar Load (0.1ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."legacy_color" = 'red' LIMIT 1[0m
+SQLite3::SQLException: no such column: cars.legacy_color: SELECT  "cars".* FROM "cars" WHERE "cars"."legacy_color" = 'red' LIMIT 1
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "legacy_colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mLegacyColor Load (0.1ms)[0m  SELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'blue') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "legacy_colors" ("name", "html") VALUES ('blue', NULL)
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, 1, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mLegacyColor Load (0.1ms)[0m  SELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."name" = 'blue' LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "legacy_colors" WHERE (uid NOT IN (1,2))[0m
+  [1m[35mLegacyColor Load (0.0ms)[0m  SELECT "legacy_colors".* FROM "legacy_colors"
+WARNING: Can't mass-assign protected attributes: uid
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "legacy_colors" ("name", "html", "uid") VALUES ('red', NULL, 1)
+WARNING: Can't mass-assign protected attributes: uid
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "legacy_colors" ("name", "html", "uid") VALUES ('green', NULL, 2)
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 1 LIMIT 1[0m
+  [1m[35mLegacyColor Load (0.1ms)[0m  SELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "legacy_colors" WHERE (uid NOT IN (1,2))[0m
+  [1m[35mLegacyColor Load (0.0ms)[0m  SELECT "legacy_colors".* FROM "legacy_colors"
+WARNING: Can't mass-assign protected attributes: uid
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "legacy_colors" ("name", "html", "uid") VALUES ('red', NULL, 1)
+WARNING: Can't mass-assign protected attributes: uid
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "legacy_colors" ("name", "html", "uid") VALUES ('green', NULL, 2)
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM "legacy_colors" WHERE 1=1[0m
+  [1m[35mLegacyColor Load (0.0ms)[0m  SELECT "legacy_colors".* FROM "legacy_colors"
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "legacy_colors" ("name", "html", "uid") VALUES ('red', NULL, NULL)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "legacy_colors" ("name", "html", "uid") VALUES ('green', NULL, NULL)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "legacy_colors"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "legacy_colors" WHERE (uid NOT IN (1,2))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT * FROM "legacy_colors"[0m
+  [1m[35mLegacyColor Create (0.1ms)[0m  INSERT INTO "legacy_colors" ("uid", "name") VALUES(1, 'red')
+  [1m[36mLegacyColor Create (0.0ms)[0m  [1mINSERT INTO "legacy_colors" ("uid", "name") VALUES(2, 'green')[0m
+  [1m[35mLegacyColor Load (0.1ms)[0m  SELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."name" = 'red' LIMIT 1
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."name" = 'green' LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "legacy_colors" WHERE (uid NOT IN (1,2))
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT * FROM "legacy_colors"[0m
+  [1m[35mLegacyColor Create (0.1ms)[0m  INSERT INTO "legacy_colors" ("uid", "name") VALUES(1, 'red')
+  [1m[36mLegacyColor Create (0.0ms)[0m  [1mINSERT INTO "legacy_colors" ("uid", "name") VALUES(2, 'green')[0m
+  [1m[35mAREL (0.0ms)[0m  DELETE FROM "legacy_colors" WHERE 1=1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT * FROM "legacy_colors"[0m
+  [1m[35mLegacyColor Create (0.0ms)[0m  INSERT INTO "legacy_colors" ("name") VALUES('red')
+  [1m[36mLegacyColor Create (0.0ms)[0m  [1mINSERT INTO "legacy_colors" ("name") VALUES('green')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "legacy_colors"
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1
+  [1m[36mCar Load (0.1ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."color" IN ('red', 'invalid')[0m
+SQLite3::SQLException: no such column: cars.color: SELECT "cars".* FROM "cars" WHERE "cars"."color" IN ('red', 'invalid')
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1[0m
+  [1m[35mCar Load (0.1ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."color" IN ('red', 'invalid')
+SQLite3::SQLException: no such column: cars.color: SELECT "cars".* FROM "cars" WHERE "cars"."color" IN ('red', 'invalid')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1
+  [1m[36mCar Load (0.1ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."color" = 'invalid' LIMIT 1[0m
+SQLite3::SQLException: no such column: cars.color: SELECT  "cars".* FROM "cars" WHERE "cars"."color" = 'invalid' LIMIT 1
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1[0m
+  [1m[35mCar Load (0.1ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."color" = 'invalid' LIMIT 1
+SQLite3::SQLException: no such column: cars.color: SELECT  "cars".* FROM "cars" WHERE "cars"."color" = 'invalid' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1
+  [1m[36mCar Load (0.1ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."color" = 'red' LIMIT 1[0m
+SQLite3::SQLException: no such column: cars.color: SELECT  "cars".* FROM "cars" WHERE "cars"."color" = 'red' LIMIT 1
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1[0m
+  [1m[35mCar Load (0.1ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."color" = 'red' LIMIT 1
+SQLite3::SQLException: no such column: cars.color: SELECT  "cars".* FROM "cars" WHERE "cars"."color" = 'red' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1
+  [1m[36mCar Load (0.1ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."color" IN ('red', 'blue')[0m
+SQLite3::SQLException: no such column: cars.color: SELECT "cars".* FROM "cars" WHERE "cars"."color" IN ('red', 'blue')
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.4ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)
+  [1m[36mCar Load (0.4ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1[0m
+  [1m[35mCar Load (0.1ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."color" IN ('red', 'blue')
+SQLite3::SQLException: no such column: cars.color: SELECT "cars".* FROM "cars" WHERE "cars"."color" IN ('red', 'blue')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1
+  [1m[36mCar Load (0.3ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" IN (1, 2)[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.3ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1[0m
+  [1m[35mCar Load (0.3ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" IN (1, 2)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (26.1ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.2ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IN ('red', 'blue') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" = 'invalid' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'blue' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.6ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" = 'blue' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 111) LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "car_parts" ("name", "number") VALUES ('engine', 111)
+  [1m[36mCarPart Load (0.1ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 222) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "car_parts" ("name", "number") VALUES ('radiator', 222)[0m
+  [1m[35mCarPart Load (0.1ms)[0m  SELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 333) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "car_parts" ("name", "number") VALUES ('transmission', 333)
+  [1m[36mCarPart Load (0.1ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 3 LIMIT 1[0m
+  [1m[35mCarPart Load (0.1ms)[0m  SELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."number" = 111 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 111) LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "car_parts" ("name", "number") VALUES ('engine', 111)
+  [1m[36mCarPart Load (0.1ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 222) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "car_parts" ("name", "number") VALUES ('radiator', 222)[0m
+  [1m[35mCarPart Load (0.1ms)[0m  SELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 333) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "car_parts" ("name", "number") VALUES ('transmission', 333)
+  [1m[36mCarPart Load (0.1ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 111) LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "car_parts" ("name", "number") VALUES ('engine', 111)[0m
+  [1m[35mCarPart Load (0.1ms)[0m  SELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 222) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "car_parts" ("name", "number") VALUES ('radiator', 222)
+  [1m[36mCarPart Load (0.1ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 333) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "car_parts" ("name", "number") VALUES ('transmission', 333)[0m
+  [1m[35mCarPart Load (0.1ms)[0m  SELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 3 LIMIT 1
+  [1m[36mCarPart Load (0.1ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."number" = 111 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 111) LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "car_parts" ("name", "number") VALUES ('engine', 111)[0m
+  [1m[35mCarPart Load (0.1ms)[0m  SELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 222) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "car_parts" ("name", "number") VALUES ('radiator', 222)
+  [1m[36mCarPart Load (0.1ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 333) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "car_parts" ("name", "number") VALUES ('transmission', 333)[0m
+  [1m[35mCarPart Load (0.1ms)[0m  SELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 3 LIMIT 1
+  [1m[36mCarPart Load (0.1ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."number" = 111 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 111) LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "car_parts" ("name", "number") VALUES ('engine', 111)[0m
+  [1m[35mCarPart Load (0.1ms)[0m  SELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 222) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "car_parts" ("name", "number") VALUES ('radiator', 222)
+  [1m[36mCarPart Load (0.1ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 333) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "car_parts" ("name", "number") VALUES ('transmission', 333)[0m
+  [1m[35mCarPart Load (0.1ms)[0m  SELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 3 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 111) LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "car_parts" ("name", "number") VALUES ('engine', 111)
+  [1m[36mCarPart Load (0.1ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 222) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "car_parts" ("name", "number") VALUES ('radiator', 222)[0m
+  [1m[35mCarPart Load (0.1ms)[0m  SELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 333) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "car_parts" ("name", "number") VALUES ('transmission', 333)
+  [1m[36mCarPart Load (0.1ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 3 LIMIT 1[0m
+  [1m[35mCarPart Load (0.1ms)[0m  SELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."number" = 222 LIMIT 1
+  [1m[36mCarPart Load (0.1ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."number" = 333 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 111) LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "car_parts" ("name", "number") VALUES ('engine', 111)[0m
+  [1m[35mCarPart Load (0.1ms)[0m  SELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 222) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "car_parts" ("name", "number") VALUES ('radiator', 222)
+  [1m[36mCarPart Load (0.1ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 333) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "car_parts" ("name", "number") VALUES ('transmission', 333)[0m
+  [1m[35mCarPart Load (0.1ms)[0m  SELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 3 LIMIT 1
+  [1m[36mCarPart Load (0.0ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."number" = 123 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 111) LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "car_parts" ("name", "number") VALUES ('engine', 111)[0m
+  [1m[35mCarPart Load (0.1ms)[0m  SELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 222) LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "car_parts" ("name", "number") VALUES ('radiator', 222)
+  [1m[36mCarPart Load (0.1ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 333) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "car_parts" ("name", "number") VALUES ('transmission', 333)[0m
+  [1m[35mCarPart Load (0.1ms)[0m  SELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 3 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('green', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.2ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IN ('red', 'green')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('green', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('green', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.0ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'invalid'[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" = 'invalid' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('green', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IN ('invalid')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('green', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.0ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'white' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IN ('red', 'invalid')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('green', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.2ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IN ('red', 'green')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('green', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('green', NULL)[0m
+  [1m[35mColor Load (0.2ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'invalid'[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" = 'invalid' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('green', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IN ('invalid')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('green', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" = 'white' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IN ('red', 'invalid')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MIN("colors"."id") AS min_id FROM "colors"
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE "colors"."name" = 'red' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('green', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.0ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1
+  [1m[36mColor Load (0.0ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" = 'green' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('green', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1
+  [1m[36mColor Load (0.0ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1
+  [1m[36mColor Load (0.0ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'green') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('green', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1
+  [1m[36mColor Load (0.0ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" = 'blue' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.2ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IN ('red', 'blue')[0m
+  [1m[35mCar Load (0.1ms)[0m  SELECT "cars".* FROM "cars" WHERE (color_id NOT IN (1,2))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IN ('red')[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE (color_id NOT IN (1))
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IN ('blue')[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE (color_id NOT IN (2))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (27.3ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.2ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IN ('red', 'blue')[0m
+  [1m[35mCar Load (0.3ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."color_id" IN (1, 2)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.2ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 2, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IN ('red')[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."color_id" IN (1)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IN ('blue')[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."color_id" IN (2)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "legacy_colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "legacy_colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mLegacyColor Load (0.1ms)[0m  SELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, 1, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, 2, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1
+  [1m[36mLegacyColor Load (0.2ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."name" IN ('red', 'blue')[0m
+  [1m[35mCar Load (0.1ms)[0m  SELECT "cars".* FROM "cars" WHERE (legacy_color_id NOT IN (1,2))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "legacy_colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "legacy_colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mLegacyColor Load (0.1ms)[0m  SELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, 1, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, 2, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."name" IN ('red')[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE (legacy_color_id NOT IN (1))
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."name" IN ('blue')[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE (legacy_color_id NOT IN (2))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "legacy_colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "legacy_colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mLegacyColor Load (0.1ms)[0m  SELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, 1, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, 2, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1
+  [1m[36mLegacyColor Load (0.2ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."name" IN ('red', 'blue')[0m
+  [1m[35mCar Load (0.3ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."legacy_color_id" IN (1, 2)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "legacy_colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "legacy_colors" WHERE ("legacy_colors"."name" = 'blue') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "legacy_colors" ("name", "html") VALUES ('blue', NULL)[0m
+  [1m[35mLegacyColor Load (0.1ms)[0m  SELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."uid" = 2 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, 1, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, 2, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 2 LIMIT 1
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."name" IN ('red')[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."legacy_color_id" IN (1)
+  [1m[36mLegacyColor Load (0.1ms)[0m  [1mSELECT "legacy_colors".* FROM "legacy_colors" WHERE "legacy_colors"."name" IN ('blue')[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."legacy_color_id" IN (2)
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "cars" WHERE (id NOT IN (1,2))[0m
+  [1m[35mCar Load (0.0ms)[0m  SELECT "cars".* FROM "cars"
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type", "id") VALUES ('Ford Mustang', NULL, NULL, NULL, NULL, 1)[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type", "id") VALUES ('Ford Explorer', NULL, NULL, NULL, NULL, 2)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "cars"[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.3ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mColor Load (0.0ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.3ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mColor Load (0.0ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1
+  [1m[36mColor Load (0.0ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."name" IS NULL LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', NULL, NULL, NULL, NULL)
+  [1m[36mCar Load (0.3ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (0.2ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "colors" ("name", "html") VALUES ('red', NULL)
+  [1m[36mColor Load (0.1ms)[0m  [1mSELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)
+  [1m[36mCar Load (0.2ms)[0m  [1mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "colors" WHERE ("colors"."name" = 'red') LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "colors" ("name", "html") VALUES ('red', NULL)[0m
+  [1m[35mColor Load (0.1ms)[0m  SELECT "colors".* FROM "colors" WHERE "colors"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type") VALUES ('Ford Mustang', 1, NULL, NULL, NULL)[0m
+  [1m[35mCar Load (27.4ms)[0m  SELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "car_parts" WHERE ("car_parts"."number" = 123321) LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "car_parts" ("name", "number") VALUES ('engine', 123321)
+  [1m[36mCarPart Load (0.1ms)[0m  [1mSELECT "car_parts".* FROM "car_parts" WHERE "car_parts"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "orders" ("state", "car_part_id") VALUES ('pending', 1)
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."id" = 1 LIMIT 1[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateColors (1)
+Migrating to CreateCars (2)
+Migrating to CreateCarParts (3)
+Migrating to CreateOrders (4)
+Migrating to CreateLegacyColors (5)
+Migrating to CreateTags (6)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateColors (1)
+Migrating to CreateCars (2)
+Migrating to CreateCarParts (3)
+Migrating to CreateOrders (4)
+Migrating to CreateLegacyColors (5)
+Migrating to CreateTags (6)
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM "cars" WHERE (id NOT IN (1,2))
+  [1m[36mCar Load (0.1ms)[0m  [1mSELECT "cars".* FROM "cars"[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type", "id") VALUES ('Ford Mustang', NULL, NULL, NULL, NULL, 1)
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "cars" ("name", "color_id", "legacy_color_id", "feature_id", "feature_type", "id") VALUES ('Ford Explorer', NULL, NULL, NULL, NULL, 2)[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "cars"

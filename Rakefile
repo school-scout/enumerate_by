@@ -1,36 +1,29 @@
+# encoding: UTF-8
 require 'rubygems'
+begin
+  require 'bundler/setup'
+rescue LoadError
+  puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
+end
+
 require 'rake'
-require 'rake/testtask'
 require 'rake/rdoctask'
 
-desc 'Default: run all tests.'
-task :default => :test
+require 'rake/testtask'
 
-desc "Test enumerate_by."
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
-  t.test_files = Dir['test/**/*_test.rb']
-  t.verbose = true
+  t.libs << 'test'
+  t.pattern = 'test/**/*_test.rb'
+  t.verbose = false
 end
 
-begin
-  require 'rcov/rcovtask'
-  namespace :test do
-    desc "Test enumerate_by with Rcov."
-    Rcov::RcovTask.new(:rcov) do |t|
-      t.libs << 'lib'
-      t.test_files = Dir['test/**/*_test.rb']
-      t.rcov_opts << '--exclude="^(?!lib/)"'
-      t.verbose = true
-    end
-  end
-rescue LoadError
-end
+task :default => :test
 
-desc "Generate documentation for enumerate_by."
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'enumerate_by'
-  rdoc.options << '--line-numbers' << '--inline-source' << '--main=README.rdoc'
-  rdoc.rdoc_files.include('README.rdoc', 'CHANGELOG.rdoc', 'LICENSE', 'lib/**/*.rb')
+  rdoc.title    = 'EnumerateBy'
+  rdoc.options << '--line-numbers' << '--inline-source'
+  rdoc.rdoc_files.include('README.rdoc')
+  rdoc.rdoc_files.include('lib/**/*.rb')
 end

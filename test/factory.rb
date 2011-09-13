@@ -64,9 +64,9 @@ module Factory
     )
   end
   
-  build Tag do |attributes|
-    attributes.reverse_merge!(
-      :name => 'rails'
-    )
-  end
+ # build Tag do |attributes|
+ #   attributes.reverse_merge!(
+ #     :name => 'rails'
+ #   )
+ # end
 end

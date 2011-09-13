@@ -1,10 +1,22 @@
-# Load the plugin testing framework
-$:.unshift("#{File.dirname(__FILE__)}/../../plugin_test_helper/lib")
-require 'rubygems'
-require 'plugin_test_helper'
+# Configure Rails Envinronment
+ENV["RAILS_ENV"] = "test"
 
-# Run the migrations
-ActiveRecord::Migrator.migrate("#{Rails.root}/db/migrate")
+require File.expand_path("../dummy/config/environment.rb",  __FILE__)
+require "rails/test_help"
+
+ActionMailer::Base.delivery_method = :test
+ActionMailer::Base.perform_deliveries = true
+ActionMailer::Base.default_url_options[:host] = "test.com"
+
+Rails.backtrace_cleaner.remove_silencers!
+
+# Configure capybara for integration testing
+require "capybara/rails"
+Capybara.default_driver   = :rack_test
+Capybara.default_selector = :css
+
+# Run any available migration
+ActiveRecord::Migrator.migrate File.expand_path("../dummy/db/migrate/", __FILE__)
 
 # Mixin the factory helper
 require File.expand_path("#{File.dirname(__FILE__)}/factory")
@@ -12,17 +24,7 @@ Test::Unit::TestCase.class_eval do
   include Factory
 end
 
-# Add query counter
-ActiveRecord::Base.connection.class.class_eval do
-  IGNORED_SQL = [/^PRAGMA/, /^SELECT currval/, /^SELECT CAST/, /^SELECT @@IDENTITY/, /^SELECT @@ROWCOUNT/, /^SAVEPOINT/, /^ROLLBACK TO SAVEPOINT/, /^RELEASE SAVEPOINT/, /SHOW FIELDS/]
-  
-  def execute_with_query_record(sql, name = nil, &block)
-    $queries_executed ||= []
-    $queries_executed << sql unless IGNORED_SQL.any? { |r| sql =~ r }
-    execute_without_query_record(sql, name, &block)
-  end
-  
-  alias_method_chain :execute, :query_record
-end
+# Load support files
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
 EnumerateBy.perform_caching = false
