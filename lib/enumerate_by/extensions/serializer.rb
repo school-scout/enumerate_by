@@ -44,9 +44,30 @@ module EnumerateBy
     module Serializer
       def self.included(base) #:nodoc:
         base.class_eval do
-          alias_method_chain :serializable_attribute_names, :enumerations
-          alias_method_chain :serializable_record, :enumerations
+          #alias_method_chain :serializable_attribute_names, :enumerations
+          #alias_method_chain :serializable_record, :enumerations
+          alias_method_chain :serializable_hash, :enumerations
         end
+      end
+
+      # Automatically converted enumeration attributes to their association
+      # names so that they *appear* as attributes
+      def serializable_hash_with_enumerations(options = nil)
+        hash = serializable_hash_wihtout_enumerations(options)
+
+        # Adjust the serializable attributes by converting primary keys for
+        # enumeration associations to their association name (where possible)
+        if convert_enumerations?
+          @only_attributes = Array(options[:only]).map(&:to_s)
+          @include_associations = Array(options[:include]).map(&:to_s)
+
+          hash.map! {|attribute| enumeration_association_for(attribute) || attribute}
+          hash |= @record.class.enumeration_associations.values & @only_attributes
+          hash.sort!
+          hash -= options[:except].map(&:to_s) unless options[:only]
+        end
+
+        hash
       end
       
       # Automatically converted enumeration attributes to their association
@@ -112,6 +133,6 @@ module EnumerateBy
   end
 end
 
-ActiveRecord::Serialization::Serializer.class_eval do
+ActiveRecord::Serialization.class_eval do
   include EnumerateBy::Extensions::Serializer
 end
