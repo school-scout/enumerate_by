@@ -51,7 +51,11 @@ module EnumerateBy
           alias_method_chain :all_attributes_exists?, :enumerations
         end
       end
-      
+      def construct_attributes_from_arguments(attribute_names, arguments)
+        attributes = {}
+        attribute_names.each_with_index { |name, idx| attributes[name] = arguments[idx] }
+        attributes
+      end
       # Add support for dynamic finders
       def construct_attributes_from_arguments_with_enumerations(attribute_names, arguments)
         attributes = construct_attributes_from_arguments_without_enumerations(attribute_names, arguments)
