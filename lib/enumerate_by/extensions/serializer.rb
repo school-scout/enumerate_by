@@ -50,11 +50,7 @@ module EnumerateBy
         end
       end
 
-      def construct_attributes_from_arguments(attribute_names, arguments)
-                attributes = {}
-                attribute_names.each_with_index { |name, idx| attributes[name] = arguments[idx] }
-                attributes
-              end
+     
       # Automatically converted enumeration attributes to their association
       # names so that they *appear* as attributes
       def serializable_hash_with_enumerations(options = nil)
