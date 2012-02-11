@@ -109,7 +109,7 @@ module EnumerateBy
           if reflection = reflect_on_enumeration(name)
             klass = reflection.klass
             klass_primary_key = klass.primary_key.to_sym
-            attribute = reflection.primary_key_name
+            attribute = reflection.foreign_key
             id = if allow_multiple && enumerator.is_a?(Array)
               klass.find_all_by_enumerator!(enumerator).map(&klass_primary_key)
             else

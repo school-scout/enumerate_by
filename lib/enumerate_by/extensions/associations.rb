@@ -72,7 +72,7 @@ module EnumerateBy
         reflection = reflections[association_id.to_sym]
         if !reflection.options[:polymorphic] && (reflection.klass < ActiveRecord::Base) && reflection.klass.enumeration?
           name = reflection.name
-          primary_key_name = reflection.primary_key_name
+          foreign_key = reflection.foreign_key
           class_name = reflection.class_name
           klass = reflection.klass
           klass_primary_key = klass.primary_key.to_sym
@@ -80,14 +80,14 @@ module EnumerateBy
           # Inclusion scopes
           %W(with_#{name} with_#{name.to_s.pluralize}).each do |scope_name|
             scope scope_name.to_sym, lambda {|*enumerators| {
-              :conditions => {primary_key_name => klass.find_all_by_enumerator!(enumerators).map(&klass_primary_key)}
+              :conditions => {foreign_key => klass.find_all_by_enumerator!(enumerators).map(&klass_primary_key)}
             }}
           end
 
           # Exclusion scopes
           %W(without_#{name} without_#{name.to_s.pluralize}).each do |scope_name|
             scope scope_name.to_sym, lambda {|*enumerators| {
-              :conditions => ["#{primary_key_name} NOT IN (?)", klass.find_all_by_enumerator!(enumerators).map(&klass_primary_key)]
+              :conditions => ["#{foreign_key} NOT IN (?)", klass.find_all_by_enumerator!(enumerators).map(&klass_primary_key)]
             }}
           end
 
@@ -98,7 +98,7 @@ module EnumerateBy
           alias_method_chain "#{name}=", :enumerators
 
           # Track the association
-          enumeration_associations[primary_key_name.to_s] = name.to_s
+          enumeration_associations[foreign_key.to_s] = name.to_s
         end
       end
     end
