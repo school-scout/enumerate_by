@@ -1,7 +1,6 @@
 # Provide a simple gemspec so you can easily use your enginex
 # project in your rails apps through git.
 Gem::Specification.new do |s|
-  Gem::Specification.new do |s|
     s.name              = "enumerate_by"
     s.version           = '0.4.4'
     s.authors           = ["Aaron Pfeifer"]
