@@ -45,36 +45,15 @@ module EnumerateBy
     module BaseConditions
       def self.extended(base) #:nodoc:
         class << base
-          alias_method_chain :construct_attributes_from_arguments, :enumerations
-          alias_method_chain :sanitize_sql_hash_for_conditions, :enumerations
+          alias_method_chain :expand_hash_conditions_for_aggregates, :enumerations
           alias_method_chain :sanitize_sql_hash_for_assignment, :enumerations
           alias_method_chain :all_attributes_exists?, :enumerations
         end
       end
 
-      def construct_attributes_from_arguments(attribute_names, arguments)
-        attributes = {}
-        attribute_names.each_with_index { |name, idx| attributes[name] = arguments[idx] }
-        attributes
-      end
-
-      # Add support for dynamic finders
-      def construct_attributes_from_arguments_with_enumerations(attribute_names, arguments)
-        attributes = construct_attributes_from_arguments_without_enumerations(attribute_names, arguments)
-        attribute_names.each_with_index do |name, idx|
-          if options = enumerator_options_for(name, arguments[idx])
-            attributes.delete(name)
-            attributes.merge!(options)
-          end
-        end
-
-        attributes
-      end
-
-      # Sanitizes a hash of attribute/value pairs into SQL conditions for a WHERE clause.
-      def sanitize_sql_hash_for_conditions_with_enumerations(attrs, *args)
+      def expand_hash_conditions_for_aggregates_with_enumerations(attrs)
         replace_enumerations_in_hash(attrs)
-        sanitize_sql_hash_for_conditions_without_enumerations(attrs, *args)
+        expand_hash_conditions_for_aggregates_without_enumerations(attrs)
       end
 
       # Sanitizes a hash of attribute/value pairs into SQL conditions for a SET clause.
@@ -96,12 +75,14 @@ module EnumerateBy
         # Finds all of the attributes that are enumerations and replaces them
         # with the correct enumerator id
         def replace_enumerations_in_hash(attrs, allow_multiple = true) #:nodoc:
+          new_attrs = {}
           attrs.each do |attr, value|
             if options = enumerator_options_for(attr, value, allow_multiple)
               attrs.delete(attr)
-              attrs.merge!(options)
+              new_attrs.merge!(options)
             end
           end
+          attrs.merge!(new_attrs)
         end
 
         # Generates the enumerator lookup options for the given association
