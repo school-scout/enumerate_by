@@ -12,6 +12,6 @@ Gem::Specification.new do |s|
     #s.files             = `git ls-files`.split("\n")
     #s.test_files        = `git ls-files -- test/*`.split("\n")
     s.rdoc_options      = %w(--line-numbers --inline-source --title enumerate_by --main README.rdoc)
-    s.extra_rdoc_files  = %w(README.rdoc CHANGELOG.rdoc LICENSE)
+    s.extra_rdoc_files  = %w(README.rdoc CHANGELOG.rdoc MIT-LICENSE)
     s.files = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.rdoc"]
 end
