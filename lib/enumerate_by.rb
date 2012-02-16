@@ -129,7 +129,7 @@ module EnumerateBy
     #   Color.find_by_enumerator('red')     # => #<Color id: 1, name: "red">
     #   Color.find_by_enumerator('invalid') # => nil
     def find_by_enumerator(enumerator)
-      first(:conditions => {enumerator_attribute => typecast_enumerator(enumerator)})
+      where(enumerator_attribute => typecast_enumerator(enumerator)).first
     end
     
     # Finds the record that is associated with the given enumerator.  If no
@@ -154,7 +154,7 @@ module EnumerateBy
     #   Color.find_all_by_enumerator(['red', 'green'])  # => [#<Color id: 1, name: "red">, #<Color id: 1, name: "green">]
     #   Color.find_all_by_enumerator('invalid')         # => []
     def find_all_by_enumerator(enumerators)
-      all(:conditions => {enumerator_attribute => typecast_enumerator(enumerators)})
+      where(enumerator_attribute => typecast_enumerator(enumerators)).all
     end
     
     # Finds records with the given enumerators.  If no record is found for a
@@ -181,11 +181,13 @@ module EnumerateBy
     # unnecessary lookups in the database.
     [:find_by_sql, :exists?, :calculate].each do |method|
       define_method(method) do |*args|
-        if EnumerateBy.perform_caching && perform_enumerator_caching &&
-            !(method == :find_by_sql && args.first.to_sql.include?('JOIN'))    # Workaround: No caching for associations!
-          shallow_clone(enumerator_cache_store.fetch([method] + args) { super(*args) })
-        else
-          super(*args)
+        silence_auto_explain do
+          if EnumerateBy.perform_caching && perform_enumerator_caching &&
+              !(method == :find_by_sql && args.first.to_sql.include?('JOIN'))    # Workaround: No caching for associations!
+            shallow_clone(enumerator_cache_store.fetch([method, args.first.to_sql]) { super(*args) })
+          else
+            super(*args)
+          end
         end
       end
     end
