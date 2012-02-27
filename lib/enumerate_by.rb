@@ -182,9 +182,13 @@ module EnumerateBy
     [:find_by_sql, :exists?, :calculate].each do |method|
       define_method(method) do |*args|
         silence_auto_explain do
+
+          query = args.first.to_sql
+          remaining_args = args[1,args.size-1]
+
           if EnumerateBy.perform_caching && perform_enumerator_caching &&
-              !(method == :find_by_sql && args.first.to_sql.include?('JOIN'))    # Workaround: No caching for associations!
-            shallow_clone(enumerator_cache_store.fetch([method, args.first.to_sql]) { super(*args) })
+              !(method == :find_by_sql && query.include?('JOIN'))    # Workaround: No caching for associations!
+            shallow_clone(enumerator_cache_store.fetch([method, query, remaining_args]) { super(*args) })
           else
             super(*args)
           end
