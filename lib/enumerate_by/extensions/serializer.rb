@@ -54,7 +54,7 @@ module EnumerateBy
       # Automatically converted enumeration attributes to their association
       # names so that they *appear* as attributes
       def serializable_hash_with_enumerations(options = nil)
-        hash = serializable_hash_wihtout_enumerations(options)
+        hash = serializable_hash_without_enumerations(options)
 
         # Adjust the serializable attributes by converting primary keys for
         # enumeration associations to their association name (where possible)
