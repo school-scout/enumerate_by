@@ -1,5 +1,4 @@
-module EnumerateBy
-  module Extensions #:nodoc:
+module EnumerateBy::Extensions::Serializer
     # Adds support for automatically converting enumeration attributes to the
     # value represented by them.
     # 
@@ -41,99 +40,66 @@ module EnumerateBy
     # 
     # As can be seen from above, enumeration attributes can either be treated
     # as pseudo-attributes on the record or its actual association.
-    module Serializer
-      def self.included(base) #:nodoc:
-        base.class_eval do
-          #alias_method_chain :serializable_attribute_names, :enumerations
-          #alias_method_chain :serializable_record, :enumerations
-          alias_method_chain :serializable_hash, :enumerations
-        end
-      end
 
-     
-      # Automatically converted enumeration attributes to their association
-      # names so that they *appear* as attributes
-      def serializable_hash_with_enumerations(options = nil)
-        hash = serializable_hash_without_enumerations(options)
-
-        # Adjust the serializable attributes by converting primary keys for
-        # enumeration associations to their association name (where possible)
-        if convert_enumerations?
-          @only_attributes = Array(options[:only]).map(&:to_s)
-          @include_associations = Array(options[:include]).map(&:to_s)
-
-          hash.map! {|attribute| enumeration_association_for(attribute) || attribute}
-          hash |= @record.class.enumeration_associations.values & @only_attributes
-          hash.sort!
-          hash -= options[:except].map(&:to_s) unless options[:only]
-        end
-
-        hash
-      end
-      
-      # Automatically converted enumeration attributes to their association
-      # names so that they *appear* as attributes
-      def serializable_attribute_names_with_enumerations
-        attribute_names = serializable_attribute_names_without_enumerations
-        
-        # Adjust the serializable attributes by converting primary keys for
-        # enumeration associations to their association name (where possible)
-        if convert_enumerations?
-          @only_attributes = Array(options[:only]).map(&:to_s)
-          @include_associations = Array(options[:include]).map(&:to_s)
-          
-          attribute_names.map! {|attribute| enumeration_association_for(attribute) || attribute}
-          attribute_names |= @record.class.enumeration_associations.values & @only_attributes
-          attribute_names.sort!
-          attribute_names -= options[:except].map(&:to_s) unless options[:only]
-        end
-        
-        attribute_names
-      end
-      
-      # Automatically casts enumerations to their public values
-      def serializable_record_with_enumerations
-        returning(serializable_record = serializable_record_without_enumerations) do
-          serializable_record.each do |attribute, value|
-            # Typecast to enumerator value
-            serializable_record[attribute] = value.enumerator if typecast_to_enumerator?(attribute, value)
-          end if convert_enumerations?
-        end
-      end
-      
-      private
-        # Should enumeration attributes be automatically converted based on
-        # the serialization configuration
-        def convert_enumerations?
-          options[:enumerations] != false
-        end
-        
-        # Should the given attribute be converted to the actual enumeration?
-        def convert_to_enumeration?(attribute)
-          !@only_attributes.include?(attribute)
-        end
-        
-        # Gets the association name for the given enumeration attribute, if
-        # one exists
-        def enumeration_association_for(attribute)
-          association = @record.class.enumeration_associations[attribute]
-          association if association && convert_to_enumeration?(attribute) && !include_enumeration?(association)
-        end
-        
-        # Is the given enumeration attribute being included as a whole record
-        # instead of just an individual attribute?
-        def include_enumeration?(association)
-          @include_associations.include?(association)
-        end
-        
-        # Should the given value be typecasted to its enumerator value?
-        def typecast_to_enumerator?(association, value)
-          value.is_a?(ActiveRecord::Base) && value.class.enumeration? && !include_enumeration?(association)
-        end
+  def self.included(base) #:nodoc:
+    base.class_eval do
+      alias_method_chain :serializable_hash, :enumerations
     end
   end
+ 
+  # Automatically converted enumeration attributes to their association
+  # names so that they *appear* as attributes
+  def serializable_hash_with_enumerations(options = nil)
+    attrs = serializable_hash_without_enumerations(options)
+
+    # Adjust the serializable attributes by converting primary keys for
+    # enumeration associations to their association name (where possible)
+    if options[:enumerations] != false
+      new_attrs = {}
+      @only_attributes = Array(options[:only]).map(&:to_s)
+      @except_attributes = @only_attributes.blank? ? Array(options[:except]).map(&:to_s) : []
+      @include_associations = Array(options[:include]).map(&:to_s)
+
+      attrs.each do |attribute,value|
+        enumeration_attribute = enumeration_association_for(attribute)
+        if enumeration_attribute
+          new_attrs[enumeration_attribute] = send(enumeration_attribute).to_s
+        else
+          new_attrs[attribute] = value
+        end
+      end
+
+      @only_attributes.each do |attribute|
+        new_attrs[attribute] = send(attribute).to_s unless new_attrs.include?(attribute)
+      end
+
+      attrs = new_attrs
+    end
+
+    attrs
+  end
+  
+  private
+  # Should the given attribute be converted to the actual enumeration?
+  def convert_to_enumeration?(attribute)
+    !@only_attributes.include?(attribute)
+  end
+  
+  # Gets the association name for the given enumeration attribute, if
+  # one exists
+  def enumeration_association_for(attribute)
+    association = enumeration_associations[attribute]
+    association if association && convert_to_enumeration?(attribute) && !include_enumeration?(association) && !@except_attributes.include?(association)
+  end
+  
+  # Is the given enumeration attribute being included as a whole record
+  # instead of just an individual attribute?
+  def include_enumeration?(association)
+    @include_associations.include?(association)
+  end 
+
 end
 
-ActiveRecord::Serialization.class_eval do
+ActiveRecord::Base.class_eval do
   include EnumerateBy::Extensions::Serializer
 end
