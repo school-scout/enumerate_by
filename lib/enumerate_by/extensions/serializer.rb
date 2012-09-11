@@ -54,7 +54,7 @@ module EnumerateBy::Extensions::Serializer
 
     # Adjust the serializable attributes by converting primary keys for
     # enumeration associations to their association name (where possible)
-    if options[:enumerations] != false
+    if options && options[:enumerations] != false
       new_attrs = {}
       @only_attributes = Array(options[:only]).map(&:to_s)
       @except_attributes = @only_attributes.blank? ? Array(options[:except]).map(&:to_s) : []
