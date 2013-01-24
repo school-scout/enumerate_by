@@ -182,9 +182,8 @@ module EnumerateBy
     [:find_by_sql, :exists?, :calculate].each do |method|
       define_method(method) do |*args|
         silence_auto_explain do
-
-          query = args.first.to_sql
           remaining_args = args[1,args.size-1]
+          query = connection.to_sql(args.first, remaining_args)
 
           if EnumerateBy.perform_caching && perform_enumerator_caching &&
               !(method == :find_by_sql && query.include?('JOIN'))    # Workaround: No caching for associations!
