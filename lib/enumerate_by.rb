@@ -291,38 +291,40 @@ module EnumerateBy
     def bootstrap(*records)
       enumerator_cache_store.fetch(enumeration_cache_key(records)) do
         uncached do
-          primary_key = self.primary_key.to_sym
+          transaction do
+            primary_key = self.primary_key.to_sym
 
-          # Remove records that are no longer being used
-          records.flatten!
-          ids = records.map {|record| record[primary_key]}.compact
-          delete_all(ids.any? ? ["#{primary_key} NOT IN (?)", ids] : nil)
+            # Remove records that are no longer being used
+            records.flatten!
+            ids = records.map {|record| record[primary_key]}.compact
+            delete_all(ids.any? ? ["#{primary_key} NOT IN (?)", ids] : nil)
 
-          # Find remaining existing records (to be updated)
-          existing = all.inject({}) {|existing, record| existing[record.send(primary_key)] = record; existing}
+            # Find remaining existing records (to be updated)
+            existing = all.inject({}) {|existing, record| existing[record.send(primary_key)] = record; existing}
 
-          records.map! do |attributes|
-            attributes.symbolize_keys!
-            defaults = attributes.delete(:defaults)
+            records.map! do |attributes|
+              attributes.symbolize_keys!
+              defaults = attributes.delete(:defaults)
 
-            # Update with new attributes
-            record =
-              if record = existing[attributes[primary_key]]
-                attributes.merge!(defaults.delete_if {|attribute, value| record.send("#{attribute}?")}) if defaults
-                record.attributes = attributes
-                record
-              else
-                attributes.merge!(defaults) if defaults
-                new(attributes)
-              end
-            record.send("#{primary_key}=", attributes[primary_key])
+              # Update with new attributes
+              record =
+                if record = existing[attributes[primary_key]]
+                  attributes.merge!(defaults.delete_if {|attribute, value| record.send("#{attribute}?")}) if defaults
+                  record.attributes = attributes
+                  record
+                else
+                  attributes.merge!(defaults) if defaults
+                  new(attributes)
+                end
+              record.send("#{primary_key}=", attributes[primary_key])
 
-            # Force failed saves to stop execution
-            record.save!
-            record
+              # Force failed saves to stop execution
+              record.save!
+              record
+            end
+
+            records
           end
-
-          records
         end
       end
     end
