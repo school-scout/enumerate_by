@@ -15,7 +15,7 @@ module EnumerateBy
           # Enumerator types are always strings
           def compute_type_with_enumerations
             if enumeration_association?
-              klass = @record.class.reflections[name.to_sym].klass
+              klass = @serializable.class.reflections[name.to_sym].klass
               type = klass.columns_hash[klass.enumerator_attribute.to_s].type
 
               case type
@@ -34,7 +34,7 @@ module EnumerateBy
           # Gets the real value representing the enumerator
           def compute_value_with_enumerations
             if enumeration_association?
-              association = @record.send(name)
+              association = @serializable.send(name)
               association.enumerator if association
             else
               compute_value_without_enumerations
@@ -43,7 +43,7 @@ module EnumerateBy
 
           # Is this attribute defined by an enumeration association?
           def enumeration_association?
-            @enumeration_association ||= @record.enumeration_associations.value?(name)
+            @enumeration_association ||= @serializable.is_a?(ActiveRecord::Base) && @serializable.enumeration_associations.value?(name)
           end
       end
     end
