@@ -181,7 +181,8 @@ module EnumerateBy
     # unnecessary lookups in the database.
     [:find_by_sql, :exists?, :calculate].each do |method|
       define_method(method) do |*args|
-        silence_auto_explain do
+        # silence_auto_explain do
+        # ^only works on rails-3.2+
           remaining_args = args[1,args.size-1]
           query = connection.to_sql(args.first, remaining_args)
 
@@ -191,7 +192,7 @@ module EnumerateBy
           else
             super(*args)
           end
-        end
+        # end
       end
     end
     
