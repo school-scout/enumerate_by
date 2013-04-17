@@ -2,7 +2,7 @@
 # project in your rails apps through git.
 Gem::Specification.new do |s|
     s.name              = "enumerate_by"
-    s.version           = '0.4.4.2'
+    s.version           = '0.4.4.2.1'
     s.authors           = ["Aaron Pfeifer"]
     s.email             = "aaron@pluginaweek.org"
     s.homepage          = "http://www.pluginaweek.org"
