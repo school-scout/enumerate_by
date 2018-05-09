@@ -295,7 +295,7 @@ module EnumerateBy
             primary_key = self.primary_key.to_sym
 
             # Remove records that are no longer being used
-            records.flatten!
+            records.flatten!.map!(&:symbolize_keys)
             ids = records.map {|record| record[primary_key]}.compact
             delete_all(ids.any? ? ["#{primary_key} NOT IN (?)", ids] : nil)
 
@@ -303,7 +303,6 @@ module EnumerateBy
             existing = all.inject({}) {|existing, record| existing[record.send(primary_key)] = record; existing}
 
             records.map! do |attributes|
-              attributes.symbolize_keys!
               defaults = attributes.delete(:defaults)
 
               # Update with new attributes
