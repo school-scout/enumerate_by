@@ -1,5 +1,4 @@
 require 'enumerate_by/extensions/associations'
-require 'enumerate_by/extensions/base_conditions'
 require 'enumerate_by/extensions/serializer'
 require 'enumerate_by/extensions/xml_serializer'
 
@@ -181,16 +180,14 @@ module EnumerateBy
     # unnecessary lookups in the database.
     [:find_by_sql, :exists?, :calculate].each do |method|
       define_method(method) do |*args|
-        silence_auto_explain do
-          remaining_args = args[1,args.size-1]
-          query = connection.to_sql(args.first, remaining_args)
+        remaining_args = args[1,args.size-1]
+        query = connection.to_sql(args.first, remaining_args)
 
-          if EnumerateBy.perform_caching && perform_enumerator_caching &&
-              !(method == :find_by_sql && query.include?('JOIN'))    # Workaround: No caching for associations!
-            shallow_clone(enumerator_cache_store.fetch([method, query, remaining_args]) { super(*args) })
-          else
-            super(*args)
-          end
+        if EnumerateBy.perform_caching && perform_enumerator_caching &&
+            !(method == :find_by_sql && query.include?('JOIN'))    # Workaround: No caching for associations!
+          shallow_clone(enumerator_cache_store.fetch([method, query, remaining_args]) { super(*args) })
+        else
+          super(*args)
         end
       end
     end
