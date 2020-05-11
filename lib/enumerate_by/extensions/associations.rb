@@ -65,8 +65,8 @@ module EnumerateBy
       end
 
       # Adds support for belongs_to and enumerations
-      def belongs_to_with_enumerations(association_id, options = {})
-        belongs_to_without_enumerations(association_id, options)
+      def belongs_to_with_enumerations(association_id, orig_scope = nil, options = {})
+        belongs_to_without_enumerations(association_id, orig_scope, options)
 
         # Override accessor if class is valid enumeration
         reflection = reflections[association_id.to_sym]
